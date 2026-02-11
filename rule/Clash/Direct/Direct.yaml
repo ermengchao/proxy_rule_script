@@ -3,3 +3,4 @@ payload:
   - DOMAIN-SUFFIX,argotunnel.com,DIRECT
   - DOMAIN-SUFFIX,lma1b2.com,DIRECT
   - DOMAIN-SUFFIX,system-stats.com,DIRECT
+  - PROCESS-NAME, cloudflared, DIRECT
