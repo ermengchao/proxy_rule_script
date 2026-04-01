@@ -84,7 +84,7 @@ function countryRemap(proxies) {
       country.count++;
       country.info.push({
         ...proxy,
-        name: `${byAbbr[code].flag} ${code} ${country.count.toString().padStart(2, "0")}`,
+        name: `${byAbbr[code].flag} ${code} ${country.count.toString().padStart(2, "0")} @ ${proxy._subName}`,
       });
     } else {
       collection.push({
@@ -93,7 +93,7 @@ function countryRemap(proxies) {
         info: [
           {
             ...proxy,
-            name: `${byAbbr[code].flag} ${code} 01`,
+            name: `${byAbbr[code].flag} ${code} 01 @ ${proxy._subName}`,
           },
         ],
       });
