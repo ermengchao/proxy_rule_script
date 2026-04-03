@@ -1,30 +1,37 @@
 const mode = $arguments.mode;
 
 const COUNTRIES = [
-  { key: "Argentina",     abbr: "AR", flag: "🇦🇷", ch: "阿根廷",   en: "Argentina" },
-  { key: "Brazil",        abbr: "BR", flag: "🇧🇷", ch: "巴西",     en: "Brazil" },
+  { key: "Australia",     abbr: "AU", flag: "🇦🇺", ch: "澳大利亚", en: "Australia" },
   { key: "Canada",        abbr: "CA", flag: "🇨🇦", ch: "加拿大",   en: "Canada" },
-  { key: "Chile",         abbr: "CL", flag: "🇨🇱", ch: "智利",     en: "Chile" },
-  { key: "Dubai",         abbr: "AE", flag: "🇦🇪", ch: "迪拜",     en: "Dubai" },
-  { key: "France",        abbr: "FR", flag: "🇫🇷", ch: "法国",     en: "France" },
-  { key: "Germany",       abbr: "DE", flag: "🇩🇪", ch: "德国",     en: "Germany" },
   { key: "HongKong",      abbr: "HK", flag: "🇭🇰", ch: "香港",     en: "Hong Kong" },
-  { key: "India",         abbr: "IN", flag: "🇮🇳", ch: "印度",     en: "India" },
-  { key: "Israel",        abbr: "IL", flag: "🇮🇱", ch: "以色列",   en: "Israel" },
   { key: "Japan",         abbr: "JP", flag: "🇯🇵", ch: "日本",     en: "Japan" },
-  { key: "Malaysia",      abbr: "MY", flag: "🇲🇾", ch: "马来西亚", en: "Malaysia" },
-  { key: "Mexico",        abbr: "MX", flag: "🇲🇽", ch: "墨西哥",   en: "Mexico" },
-  { key: "Netherlands",   abbr: "NL", flag: "🇳🇱", ch: "荷兰",     en: "Netherlands" },
-  { key: "Russia",        abbr: "RU", flag: "🇷🇺", ch: "俄罗斯",   en: "Russia" },
   { key: "Singapore",     abbr: "SG", flag: "🇸🇬", ch: "新加坡",   en: "Singapore" },
-  { key: "Spain",         abbr: "ES", flag: "🇪🇸", ch: "西班牙",   en: "Spain" },
-  { key: "SouthAfrica",   abbr: "ZA", flag: "🇿🇦", ch: "南非",     en: "South Africa" },
-  { key: "Switzerland",   abbr: "CH", flag: "🇨🇭", ch: "瑞士",     en: "Switzerland" },
+  { key: "SouthKorea",    abbr: "KR", flag: "🇰🇷", ch: "韩国",     en: "Korea" },
   { key: "Taiwan",        abbr: "TW", flag: "🇹🇼", ch: "台湾",     en: "Taiwan" },
-  { key: "Thailand",      abbr: "TH", flag: "🇹🇭", ch: "泰国",     en: "Thailand" },
-  { key: "Turkey",        abbr: "TR", flag: "🇹🇷", ch: "土耳其",   en: "Turkey" },
   { key: "UnitedKingdom", abbr: "UK", flag: "🇬🇧", ch: "英国",     en: "United Kingdom" },
   { key: "UnitedStates",  abbr: "US", flag: "🇺🇸", ch: "美国",     en: "United States" },
+
+  // { key: "Argentina",     abbr: "AR", flag: "🇦🇷", ch: "阿根廷",   en: "Argentina" },
+  // { key: "Brazil",        abbr: "BR", flag: "🇧🇷", ch: "巴西",     en: "Brazil" },
+  // { key: "Chile",         abbr: "CL", flag: "🇨🇱", ch: "智利",     en: "Chile" },
+  // { key: "Dubai",         abbr: "AE", flag: "🇦🇪", ch: "迪拜",     en: "Dubai" },
+  // { key: "Egypt",         abbr: "EG", flag: "🇪🇬", ch: "埃及",     en: "Egypt" },
+  // { key: "France",        abbr: "FR", flag: "🇫🇷", ch: "法国",     en: "France" },
+  // { key: "Germany",       abbr: "DE", flag: "🇩🇪", ch: "德国",     en: "Germany" },
+  // { key: "India",         abbr: "IN", flag: "🇮🇳", ch: "印度",     en: "India" },
+  // { key: "Israel",        abbr: "IL", flag: "🇮🇱", ch: "以色列",   en: "Israel" },
+  // { key: "Italy",         abbr: "IT", flag: "🇮🇹", ch: "意大利",   en: "Italy" },
+  // { key: "Malaysia",      abbr: "MY", flag: "🇲🇾", ch: "马来西亚", en: "Malaysia" },
+  // { key: "Mexico",        abbr: "MX", flag: "🇲🇽", ch: "墨西哥",   en: "Mexico" },
+  // { key: "Netherlands",   abbr: "NL", flag: "🇳🇱", ch: "荷兰",     en: "Netherlands" },
+  // { key: "Russia",        abbr: "RU", flag: "🇷🇺", ch: "俄罗斯",   en: "Russia" },
+  // { key: "SouthAfrica",   abbr: "ZA", flag: "🇿🇦", ch: "南非",     en: "South Africa" },
+  // { key: "Spain",         abbr: "ES", flag: "🇪🇸", ch: "西班牙",   en: "Spain" },
+  // { key: "Switzerland",   abbr: "CH", flag: "🇨🇭", ch: "瑞士",     en: "Switzerland" },
+  // { key: "Thailand",      abbr: "TH", flag: "🇹🇭", ch: "泰国",     en: "Thailand" },
+  // { key: "Turkey",        abbr: "TR", flag: "🇹🇷", ch: "土耳其",   en: "Turkey" },
+
+  { key: "Other",         abbr: "OC", flag: "🏳️‍🌈", ch: "其他",     en: "Other Country" },
 ];
 
 const byAbbr = {};
@@ -67,7 +74,7 @@ function getCountryCodeFromName(name) {
     }
   }
 
-  return null;
+  return "OC";
 }
 
 function countryRemap(proxies) {
