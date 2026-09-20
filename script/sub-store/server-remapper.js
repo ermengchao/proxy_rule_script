@@ -6,7 +6,7 @@ const COUNTRIES = [
   { key: "HongKong",      abbr: "HK", flag: "🇭🇰", ch: "香港",     en: "Hong Kong" },
   { key: "Japan",         abbr: "JP", flag: "🇯🇵", ch: "日本",     en: "Japan" },
   { key: "Singapore",     abbr: "SG", flag: "🇸🇬", ch: "新加坡",   en: "Singapore" },
-  { key: "SouthKorea",    abbr: "KR", flag: "🇰🇷", ch: "韩国",     en: "Korea" },
+  { key: "SouthKorea",    abbr: "KR", flag: "🇰🇷", ch: "韩国",     en: "South Korea" },
   { key: "Taiwan",        abbr: "TW", flag: "🇹🇼", ch: "台湾",     en: "Taiwan" },
   { key: "UnitedKingdom", abbr: "UK", flag: "🇬🇧", ch: "英国",     en: "United Kingdom" },
   { key: "UnitedStates",  abbr: "US", flag: "🇺🇸", ch: "美国",     en: "United States" },
