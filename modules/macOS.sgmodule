@@ -1,0 +1,12 @@
+#!name=macOS
+#!desc=Surge Module for macOS
+#!requirement=SYSTEM == 'macOS'
+
+
+[Rule]
+IP-CIDR,100.64.0.0/10,"🟢 Direct",no-resolve
+IP-CIDR6,fd7a:115c:a1e0::/48,"🟢 Direct",no-resolve
+DOMAIN-SUFFIX,taileee60e.ts.net,"🟢 Direct",no-resolve
+
+[Host]
+*.taileee60e.ts.net = server:100.100.100.100
