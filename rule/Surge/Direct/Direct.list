@@ -1,5 +1,6 @@
 # 🟢 Direct
 
+DOMAIN,homeassistant.local
 DOMAIN-SUFFIX,argotunnel.com
 DOMAIN-SUFFIX,hdslb.com
 DOMAIN-SUFFIX,system-stats.com
