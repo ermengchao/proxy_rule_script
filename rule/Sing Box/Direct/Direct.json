@@ -3,7 +3,9 @@
   "rules": [
     {
       "domain": [
-        "homeassistant.local"
+        "homeassistant.local",
+        "localization-duostrings.duolingo.com",
+        "tts-static.duolingo.cn"
       ],
       "domain_suffix": [
         "argotunnel.com",
