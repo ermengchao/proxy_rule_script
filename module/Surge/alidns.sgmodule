@@ -1,4 +1,5 @@
 #!name=alidns
+#!desc=Overrides the default DNS resolver with AliDNS DoH over a direct connection when enabled. Controlled by the script.
 
 [General]
 encrypted-dns-server = https://dns.alidns.com/dns-query
