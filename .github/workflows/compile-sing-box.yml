@@ -1,0 +1,93 @@
+name: Compile sing-box rule sets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'rule/Sing Box/**/*.json'
+      - '.github/workflows/compile-sing-box.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: compile-sing-box-main
+  cancel-in-progress: false
+
+jobs:
+  compile:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      SING_BOX_VERSION: '1.14.3'
+      SING_BOX_SHA256: 'e2bdf179c15a3652955dc44867e33ca0965c9c9b91b34267dcc5a5d639a5feee'
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Install sing-box
+        run: |
+          set -euo pipefail
+          archive="sing-box-${SING_BOX_VERSION}-linux-amd64.tar.gz"
+          archive_path="${RUNNER_TEMP}/${archive}"
+          curl --fail --silent --show-error --location --retry 3 \
+            "https://github.com/SagerNet/sing-box/releases/download/v${SING_BOX_VERSION}/${archive}" \
+            --output "$archive_path"
+          printf '%s  %s\n' "$SING_BOX_SHA256" "$archive_path" | sha256sum --check
+          tar -xzf "$archive_path" -C "$RUNNER_TEMP"
+          binary_dir="${RUNNER_TEMP}/sing-box-${SING_BOX_VERSION}-linux-amd64"
+          printf '%s\n' "$binary_dir" >> "$GITHUB_PATH"
+          "$binary_dir/sing-box" version
+
+      - name: Compile JSON to SRS
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import shutil
+          import subprocess
+          import tempfile
+          from pathlib import Path
+
+          root = Path("rule/Sing Box")
+          sources = sorted(root.rglob("*.json"))
+          expected = {source.with_suffix(".srs") for source in sources}
+          with tempfile.TemporaryDirectory() as temporary:
+              compiled = []
+              for index, source in enumerate(sources):
+                  output = Path(temporary) / f"{index}.srs"
+                  subprocess.run(
+                      ["sing-box", "rule-set", "compile", "--output", str(output), str(source)],
+                      check=True,
+                  )
+                  compiled.append((output, source.with_suffix(".srs")))
+              # Update generated files only after all source files compile successfully.
+              for output, destination in compiled:
+                  shutil.copyfile(output, destination)
+                  print(f"Compiled {destination}")
+          for stale in sorted(root.rglob("*.srs")):
+              if stale not in expected:
+                  stale.unlink()
+                  print(f"Removed stale output {stale}")
+          print(f"Compiled {len(sources)} rule sets")
+          PY
+
+      - name: Commit changed SRS files
+        run: |
+          set -euo pipefail
+          outputs=':(glob)rule/Sing Box/**/*.srs'
+          if [ -z "$(git status --porcelain --untracked-files=all -- "$outputs")" ]; then
+            echo 'SRS files are unchanged.'
+            exit 0
+          fi
+          git add -A -- "$outputs"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'chore: compile sing-box rule sets'
+          git push origin HEAD:main

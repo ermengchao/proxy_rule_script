@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "www.fedoraproject.org"
+      ],
+      "domain_suffix": [
+        "docker.io",
+        "ghio.com",
+        "vercel.app"
+      ],
+      "domain_keyword": [
+        "brew"
+      ]
+    }
+  ]
+}

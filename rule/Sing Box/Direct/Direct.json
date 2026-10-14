@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "homeassistant.local"
+      ],
+      "domain_suffix": [
+        "argotunnel.com",
+        "hdslb.com",
+        "system-stats.com"
+      ]
+    },
+    {
+      "process_name": [
+        "cloudflared"
+      ]
+    }
+  ]
+}
