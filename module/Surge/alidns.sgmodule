@@ -1,0 +1,7 @@
+#!name=alidns
+
+[General]
+encrypted-dns-server = https://dns.alidns.com/dns-query
+
+[Rule]
+DOMAIN,dns.alidns.com,DIRECT
