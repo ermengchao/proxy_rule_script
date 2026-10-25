@@ -1,3 +1,11 @@
 payload:
-  - DOMAIN,apple-relay.apple.com
+  - DOMAIN,api-siri-prod.apple.com
+  - DOMAIN,mask-api.icloud.com
+  - DOMAIN,mask-h2.icloud.com
+  - DOMAIN,mask.apple-dns.net
+  - DOMAIN,mask-api.fe.apple-dns.net
+  - DOMAIN-SUFFIX,apple-relay.cloudflare.com
+  - DOMAIN-SUFFIX,apple-relay.fastly-edge.com
+  - DOMAIN-SUFFIX,apple-relay.apple.com
+  - DOMAIN-SUFFIX,issuer.apple.com
   - DOMAIN,openrouter.ai

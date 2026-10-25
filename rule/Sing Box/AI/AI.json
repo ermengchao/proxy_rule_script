@@ -3,8 +3,18 @@
   "rules": [
     {
       "domain": [
-        "apple-relay.apple.com",
+        "api-siri-prod.apple.com",
+        "mask-api.icloud.com",
+        "mask-h2.icloud.com",
+        "mask.apple-dns.net",
+        "mask-api.fe.apple-dns.net",
         "openrouter.ai"
+      ],
+      "domain_suffix": [
+        "apple-relay.cloudflare.com",
+        "apple-relay.fastly-edge.com",
+        "apple-relay.apple.com",
+        "issuer.apple.com"
       ]
     }
   ]

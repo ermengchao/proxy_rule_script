@@ -1,4 +1,13 @@
 # 🧠 AI
 
-DOMAIN,apple-relay.apple.com
+DOMAIN,api-siri-prod.apple.com,extended-matching
+DOMAIN,mask-api.icloud.com,extended-matching
+DOMAIN,mask-h2.icloud.com,extended-matching
+DOMAIN,mask.apple-dns.net,extended-matching
+DOMAIN,mask-api.fe.apple-dns.net,extended-matching
+DOMAIN-SUFFIX,apple-relay.cloudflare.com,extended-matching
+DOMAIN-SUFFIX,apple-relay.fastly-edge.com,extended-matching
+DOMAIN-SUFFIX,apple-relay.apple.com,extended-matching
+DOMAIN-SUFFIX,issuer.apple.com,extended-matching
+
 DOMAIN,openrouter.ai
