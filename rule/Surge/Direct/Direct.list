@@ -3,5 +3,6 @@
 DOMAIN,homeassistant.local
 DOMAIN-SUFFIX,argotunnel.com
 DOMAIN-SUFFIX,hdslb.com
+DOMAIN-SUFFIX,local
 DOMAIN-SUFFIX,system-stats.com
 PROCESS-NAME,cloudflared
