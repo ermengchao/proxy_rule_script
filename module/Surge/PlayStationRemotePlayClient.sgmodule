@@ -1,0 +1,10 @@
+#!name=PlayStationRemotePlayClient
+#!desc=For a Remote Play Mac client: route connections to the specified PS5 through 🧩 Tailnet and send other RemotePlay UDP traffic directly.
+#!arguments=host:10.10.10.65
+
+
+[Rule]
+IP-CIDR,{{{host}}}/32,"🧩 Tailnet",no-resolve
+# IP-CIDR,{{{host}}}/32,REJECT-DROP,pre-matching,no-resolve
+
+AND,((PROCESS-NAME,RemotePlay), (PROTOCOL,UDP)),🟢 Direct

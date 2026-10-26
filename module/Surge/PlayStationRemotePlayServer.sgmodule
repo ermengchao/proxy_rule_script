@@ -1,4 +1,4 @@
-#!name=PlayStationRemotePlay
+#!name=PlayStationRemotePlayServer
 #!desc=For a home Mac gateway: access the PS5 directly and route its UDP traffic directly, except destination port 443.
 #!arguments=host:10.10.10.65
 
