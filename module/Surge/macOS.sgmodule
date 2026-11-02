@@ -3,6 +3,9 @@
 #!requirement=SYSTEM == 'macOS'
 
 
+[General]
+always-real-ip = %APPEND% *.taileee60e.ts.net
+
 [Rule]
 IP-CIDR,100.64.0.0/10,🟢 Direct,no-resolve
 IP-CIDR6,fd7a:115c:a1e0::/48,🟢 Direct,no-resolve
