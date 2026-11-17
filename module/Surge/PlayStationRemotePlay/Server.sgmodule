@@ -1,0 +1,8 @@
+#!name = Server
+#!category = PlayStation Remote Play
+#!desc = For a home Mac gateway
+#!arguments = host:10.10.10.65
+
+[Rule]
+IP-CIDR, {{{host}}}/32                                                     , 🟢 Direct, no-resolve
+AND    , ((SRC-IP, {{{host}}}), (PROTOCOL, UDP), (NOT, ((DEST-PORT, 443)))), 🟢 Direct

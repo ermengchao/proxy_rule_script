@@ -1,9 +1,0 @@
-#!name = BuiltIn
-#!category = Tailscale
-#!desc = Using builtin tailscale client
-#!arguments = Proxy:🧩 Tailnet
-
-[Rule]
-IP-CIDR,100.64.0.0/10,{{{Proxy}}},no-resolve
-IP-CIDR6,fd7a:115c:a1e0::/48,{{{Proxy}}},no-resolve
-DOMAIN-SUFFIX,taileee60e.ts.net,{{{Proxy}}},no-resolve
