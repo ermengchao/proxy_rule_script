@@ -6,3 +6,11 @@ DOMAIN-SUFFIX,hdslb.com
 DOMAIN-SUFFIX,local
 DOMAIN-SUFFIX,system-stats.com
 PROCESS-NAME,cloudflared
+
+# stun
+DOMAIN,stun.cloudflare.com
+DOMAIN-WILDCARD,*.srv.nintendo.net
+DOMAIN-WILDCARD,*.stun.playstation.net
+DOMAIN-WILDCARD,xbox.*.microsoft.com
+DOMAIN-WILDCARD,*.xboxlive.com
+DOMAIN-WILDCARD,stun*.l.google.com
