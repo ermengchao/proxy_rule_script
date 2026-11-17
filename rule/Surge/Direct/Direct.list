@@ -14,3 +14,4 @@ DOMAIN-WILDCARD,*.stun.playstation.net
 DOMAIN-WILDCARD,xbox.*.microsoft.com
 DOMAIN-WILDCARD,*.xboxlive.com
 DOMAIN-WILDCARD,stun*.l.google.com
+PROTOCOL,STUN
