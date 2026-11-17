@@ -1,6 +1,6 @@
-#!name=macOS
-#!desc=Surge Module for macOS
-#!requirement=SYSTEM == 'macOS'
+#!name = Native
+#!category = Tailscale
+#!desc = Using native tailscale client
 
 
 [General]

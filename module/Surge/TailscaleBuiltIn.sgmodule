@@ -1,7 +1,7 @@
-#!name=iOS
-#!desc=Surge Module for iOS
-#!requirement=SYSTEM == 'iOS'
-#!arguments=Proxy:🧩 Tailnet
+#!name = BuiltIn
+#!category = Tailscale
+#!desc = Using builtin tailscale client
+#!arguments = Proxy:🧩 Tailnet
 
 [Rule]
 IP-CIDR,100.64.0.0/10,{{{Proxy}}},no-resolve
