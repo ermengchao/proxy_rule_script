@@ -3,13 +3,21 @@
   "rules": [
     {
       "domain": [
-        "homeassistant.local"
+        "homeassistant.local",
+        "stun.cloudflare.com"
       ],
       "domain_suffix": [
         "argotunnel.com",
         "hdslb.com",
         "local",
         "system-stats.com"
+      ],
+      "domain_regex": [
+        "^.*\\.srv\\.nintendo\\.net$",
+        "^.*\\.stun\\.playstation\\.net$",
+        "^xbox\\..*\\.microsoft\\.com$",
+        "^.*\\.xboxlive\\.com$",
+        "^stun.*\\.l\\.google\\.com$"
       ]
     },
     {
