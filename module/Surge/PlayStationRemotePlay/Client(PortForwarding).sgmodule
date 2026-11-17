@@ -1,8 +1,8 @@
-#!name = Client
+#!name = Client(Port Forwarding)
 #!category = PlayStation Remote Play
 #!desc = For a Remote Play Mac client
 #!arguments = host:10.10.10.65
 
 [Rule]
-IP-CIDR, {{{host}}}/32                                , 🧩 Tailnet, no-resolve
+IP-CIDR, {{{host}}}/32                                , 🧲 UU Remote, no-resolve
 AND    , ((PROCESS-NAME, RemotePlay), (PROTOCOL, UDP)), 🟢 Direct
