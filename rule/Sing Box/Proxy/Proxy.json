@@ -3,7 +3,8 @@
   "rules": [
     {
       "domain": [
-        "www.fedoraproject.org"
+        "www.fedoraproject.org",
+        "pkgs.tailscale.com"
       ],
       "domain_suffix": [
         "docker.io",
