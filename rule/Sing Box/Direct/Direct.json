@@ -3,6 +3,7 @@
   "rules": [
     {
       "domain": [
+        "auth.api.sonyentertainmentnetwork.com",
         "homeassistant.local",
         "stun.cloudflare.com"
       ],

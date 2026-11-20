@@ -1,5 +1,6 @@
 # 🟢 Direct
 
+DOMAIN,auth.api.sonyentertainmentnetwork.com
 DOMAIN,homeassistant.local
 DOMAIN-SUFFIX,argotunnel.com
 DOMAIN-SUFFIX,hdslb.com
