@@ -5,12 +5,14 @@
       "domain": [
         "auth.api.sonyentertainmentnetwork.com",
         "homeassistant.local",
+        "wx.qlogo.cn",
         "stun.cloudflare.com"
       ],
       "domain_suffix": [
         "argotunnel.com",
         "hdslb.com",
         "local",
+        "qq.com.cn",
         "system-stats.com"
       ],
       "domain_regex": [

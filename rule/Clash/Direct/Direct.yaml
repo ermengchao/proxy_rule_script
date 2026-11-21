@@ -1,9 +1,11 @@
 payload:
   - DOMAIN,homeassistant.local
+  - DOMAIN,wx.qlogo.cn
   - DOMAIN,auth.api.sonyentertainmentnetwork.com
   - DOMAIN-SUFFIX,argotunnel.com
   - DOMAIN-SUFFIX,hdslb.com
   - DOMAIN-SUFFIX,local
+  - DOMAIN-SUFFIX,qq.com.cn
   - DOMAIN-SUFFIX,system-stats.com
   - PROCESS-NAME,cloudflared
 
