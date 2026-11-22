@@ -1,8 +1,10 @@
 #!name = Client
 #!category = PlayStation Remote Play
 #!desc = For a Remote Play Mac client
-#!arguments = host:10.10.10.65, proxy:"🧩 Tailnet"
+#!arguments = host:10.10.10.65, proxy:"🧩 Tailnet", enable_ps5_discovery:false
 
 [Rule]
+#!REQUIREMENT "'{{{enable_ps5_discovery}}}'=='true'" AND,((PROCESS-NAME,RemotePlay),(PROTOCOL,UDP),(IP-CIDR,198.19.255.255/32),(DEST-PORT,9302)),🎮 PS5 Discovery
 IP-CIDR, {{{host}}}/32                                , {{{proxy}}}, no-resolve
 AND    , ((PROCESS-NAME, RemotePlay), (PROTOCOL, UDP)), 🟢 Direct
+AND    , ((DEST-PORT, 3478-3479)    , (PROTOCOL, UDP)), 🟢 Direct
