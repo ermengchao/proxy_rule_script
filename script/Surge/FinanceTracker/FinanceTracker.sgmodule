@@ -1,6 +1,7 @@
 #!name = Finance Tracker
 #!category = Scripts
 #!desc = Track finance via Notion
+#!requirement = SYSTEM == 'iOS'
 #!arguments = accessToken, version:2025-09-03, subscriptionsId, transactionsId
 #!arguments-desc = Enter the Notion integration token and the data source IDs for subscriptions and transactions.
 
