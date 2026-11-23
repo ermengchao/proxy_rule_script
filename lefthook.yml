@@ -1,0 +1,5 @@
+prepare-commit-msg:
+  jobs:
+    - name: ai-commit-message
+      script: ai-commit-message.fish
+      runner: fish
