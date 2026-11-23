@@ -14,7 +14,8 @@ test (string length -- "$patch") -le 12000; or exit 0
 set -l raw "$(
     printf '%s\n' "$patch" |
         timeout -k 2s 25s pi --print \
-            --model 'openai/gpt-6.2-sol' --thinking low \
+            --model "$AI_COMMIT_MODEL" \
+            --thinking "$AI_COMMIT_THINKING" \
             --no-session --no-tools --no-mcp \
             --no-extensions --no-skills --no-context-files --no-prompt-templates \
             --no-approve \

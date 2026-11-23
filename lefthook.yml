@@ -3,3 +3,6 @@ prepare-commit-msg:
     - name: ai-commit-message
       script: ai-commit-message.fish
       runner: fish
+      env:
+        AI_COMMIT_MODEL: 'openai/gpt-6.2-sol'
+        AI_COMMIT_THINKING: 'low'
