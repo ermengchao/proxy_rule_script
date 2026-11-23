@@ -1,0 +1,7 @@
+#!name = Final DNS
+#!category = Scripts
+#!desc = Switches Final and the default DNS together
+
+
+[Panel]
+Final DNS = title=Final & DNS,content=Switches Final and the default DNS together,style=info,script-name=final-dns,update-interval=1

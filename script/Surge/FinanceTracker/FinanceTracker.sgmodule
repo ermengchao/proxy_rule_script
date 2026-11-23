@@ -1,0 +1,8 @@
+#!name = Finance Tracker
+#!category = Scripts
+#!desc = Track finance via Notion
+#!arguments = accessToken, version:2025-09-03, subscriptionsId, transactionsId
+#!arguments-desc = Enter the Notion integration token and the data source IDs for subscriptions and transactions.
+
+[Script]
+Finance Tracker = type=cron, cronexp="0 9 * * *", wake-system=1, script-path=https://raw.githubusercontent.com/ermengchao/proxy_rule_script/main/script/Surge/FinanceTracker/main.js, script-update-interval=0, argument = "{\"accessToken\":\"{{{accessToken}}}\",\"version\":\"{{{version}}}\",\"dataSourceId\":{\"subscriptions\":\"{{{subscriptionsId}}}\",\"transactions\":\"{{{transactionsId}}}\"}}"
