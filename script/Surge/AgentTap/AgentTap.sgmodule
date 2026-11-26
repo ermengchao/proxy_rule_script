@@ -1,12 +1,12 @@
-#!name = agent-tap
+#!name = Agent Tap
 #!category = Scripts
 #!desc = Shows and toggles the local agent-tap capture
 #!requirement = SYSTEM == 'macOS' && CORE_VERSION >= 6011000
-#!arguments = controlToken, controlPort:19529, scriptPath:/Users/chao/.local/share/repos/proxy_rule_script/script/Surge/AgentTap/main.js
+#!arguments = controlToken, controlPort:19529
 #!arguments-desc = Enter the controller token. Leave the port and local script path unchanged unless you configured different values.
 
 [Panel]
-Agent Tap = title="agent-tap",content="Open this panel to check capture status",style=info,script-name=agent-tap-panel,update-interval=1
+Agent Tap = title="Agent Tap",content="Open this panel to check capture status",style=info,script-name=agent-tap-panel,update-interval=1
 
 [Script]
-agent-tap-panel = type=generic,script-path="{{{scriptPath}}}",timeout=5,argument="{\"token\":\"{{{controlToken}}}\",\"port\":\"{{{controlPort}}}\"}"
+agent-tap-panel = type=generic, script-path = https://raw.githubusercontent.com/ermengchao/proxy_rule_script/main/script/Surge/AgentTap/main.js, timeout = 5, argument = "{\"token\":\"{{{controlToken}}}\",\"port\":\"{{{controlPort}}}\"}"
