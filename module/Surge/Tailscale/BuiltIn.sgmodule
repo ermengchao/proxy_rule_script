@@ -2,6 +2,9 @@
 #!category = Tailscale
 #!desc = Using builtin tailscale client
 
+[General]
+tun-included-routes = %APPEND% 10.10.10.0/24
+
 [Rule]
 IP-CIDR      , 100.64.0.0/10      , Tailnet, no-resolve
 IP-CIDR6     , fd7a:115c:a1e0::/48, Tailnet, no-resolve
