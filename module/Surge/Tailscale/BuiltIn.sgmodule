@@ -1,6 +1,6 @@
 #!name = BuiltIn
 #!category = Tailscale
-#!desc = Using builtin tailscale client
+#!desc = Route Tailnet traffic through Surge's Tailscale policy. Enable separately from Native.
 
 [General]
 tun-included-routes = %APPEND% 10.10.10.0/24

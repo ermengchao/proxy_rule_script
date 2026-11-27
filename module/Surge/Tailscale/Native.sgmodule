@@ -1,14 +1,21 @@
 #!name = Native
 #!category = Tailscale
-#!desc = Using native tailscale client
+#!desc = Route Tailnet and the home subnet through the system Tailscale client. Enable separately from BuiltIn.
 
 [General]
 always-real-ip = %APPEND% *.taileee60e.ts.net
+tun-excluded-routes = %APPEND% 100.64.0.0/10, fd7a:115c:a1e0::/48, 10.10.10.0/24
 
 [Rule]
 IP-CIDR      , 100.64.0.0/10      , Direct, no-resolve
 IP-CIDR6     , fd7a:115c:a1e0::/48, Direct, no-resolve
+IP-CIDR      , 10.10.10.0/24      , Direct, no-resolve
 DOMAIN-SUFFIX, taileee60e.ts.net  , Direct, no-resolve
 
 [Host]
 *.taileee60e.ts.net = server:100.100.100.100
+
+[Tailscale Tailnet]
+interactive-login = true
+mtu = 1280
+auto-add-magic-dns-rule = false
